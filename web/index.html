@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Dragon Dungeon E-Commerce</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+		<!-- bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">      
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">		
+		<link href="css/bootstrappage.css" rel="stylesheet"/>
+		
+		<!-- global styles -->
+		<link href="css/flexslider.css" rel="stylesheet"/>
+		<link href="css/main.css" rel="stylesheet"/>
+
+		<!-- scripts -->
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>				
+		<script src="js/superfish.js"></script>	
+		<script src="js/jquery.scrolltotop.js"></script>
+		<!--[if lt IE 9]>			
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif]-->
+    </head>
+    <body>		
+        
+        <!--Navigation Bar -->
+        <div id="top-bar" class="container">
+            <div class="row">
+                <div class="span4">
+                    <form method="POST" class="search_form">
+                        <input type="text" class="input-block-level search-query" Placeholder="Search for your Dragon">
+                    </form>
+                </div>
+                <div class="account pull-right">
+                    <ul class="user-menu">				
+                    <li><a href="./register.html">My Account</a></li>
+                    <li><a href="UserCart.jsp">My Cart</a></li>
+                    <li><a href="UserCheckout.jsp">Checkout</a></li>	
+                    <li><a href="./contact.html">Contact Us</a></li>
+                    <li>Logged in as 
+                        <% User user = (User) session.getAttribute("SKUSER");%>
+                        <% if (user!= null){
+                            out.println("Logged in: " + user.getFirstName()); }
+                            else { out.println("(Unregistered User)");} %></li>           
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="wrapper" class="container">
+            <section class="navbar main-menu">
+                <div class="navbar-inner main-menu">				
+                    <a href="index.html" class="logo pull-left"><img src="img/dragon1.png" class="site_logo" alt=""></a>
+                    <nav id="menu" class="pull-right">
+                    <ul>
+                        <li><a href="./products.html">Clothing</a>					
+                            <ul>
+                                <li><a href="./products.html">Womens</a></li>									
+                                <li><a href="./products.html">Mens</a></li>
+                                <li><a href="./products.html">Kids</a></li>									
+                            </ul>
+                        </li>															
+                        <li><a href="./products.html">Furniture</a>					
+                            <ul>
+                                <li><a href="./products.html">Bed Room</a></li>									
+                                <li><a href="./products.html">Living Room</a></li>
+                                <li><a href="./products.html">Accessories</a></li>									
+                            </ul>
+                        </li>							
+                        <li><a href="./products.html">Art</a>
+                            <ul>									
+                                <li><a href="./products.html">Canvas</a></li>
+                                <li><a href="./products.html">Poster</a></li>
+                                <li><a href="./products.html">Sculptures</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./products.html">Most Popular</a></li>
+                        <li><a href="./products.html">Latest Dragons</a></li>
+                    </ul>
+                    </nav>
+                </div>
+            </section>
+            
+            <section  class="homepage-slider" id="home-slider">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <img src="img/dragonChairbanner.jpg" alt="" />
+                            <div class="intro">
+                                    <h1>Mid season sale</h1>
+                                    <p><span>Up to 50% Off</span></p>
+                                    <p><span>On selected items online and in stores</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/artwork.jpg" alt="" />
+                            <div class="intro">
+                                    <h1>New Season Wallpaper</h1>
+                                    <p><span>Up to 20% off</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>			
+            </section>
+            <section class="header_text">
+                    <b>If you can't be yourself, be a dragon! </b>
+            </section>
+            
+            <section class="main-content">
+                <div class="row">
+                    <div class="span12">													
+                        <div class="row">
+                            <div class="span12">
+                                <h4 class="title">
+                                <span class="pull-left"><span class="text"><span class="line">Feature <strong>Products</strong></span></span></span>
+                                <span class="pull-right">
+                                        <a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
+                                </span>
+                                </h4>
+                                <div id="myCarousel" class="myCarousel carousel slide">
+                                    <div class="carousel-inner">
+                                        <div class="active item">
+                                            <ul class="thumbnails">												
+                                                <li class="span3">
+                                                <div class="product-box">
+                                                    <span class="sale_tag"></span>
+                                                    <p><a href="product_detail.html"><img src="img/dragonTable.jpg" alt="" /></a></p>
+                                                    <a href="product_detail.html" class="title">Dragon Marble Table</a><br/>
+                                                    <a href="products.html" class="category">Furniture</a>
+                                                    <p class="price">$999.99</p>
+                                                </div>
+                                                </li>
+                                                <li class="span3">
+                                                <div class="product-box">
+                                                    <span class="sale_tag"></span>
+                                                    <p><a href="product_detail.html"><img src="img/dragonPicture.jpg" alt="" /></a></p>
+                                                    <a href="product_detail.html" class="title">Mystical Oil Painting</a><br/>
+                                                    <a href="products.html" class="category">Art</a>
+                                                    <p class="price">$250.50</p>
+                                                </div>
+                                                </li>
+                                                <li class="span3">
+                                                    <div class="product-box">
+                                                        <p><a href="product_detail.html"><img src="img/womenClothing.jpg" alt="" /></a></p>
+                                                        <a href="product_detail.html" class="title">Women's Dragon Fairy</a><br/>
+                                                        <a href="products.html" class="category">Clothing</a>
+                                                        <p class="price">$39.99</p>
+                                                    </div>
+                                                </li>
+                                                <li class="span3">
+                                                    <div class="product-box">
+                                                        <p><a href="product_detail.html"><img src="img/dragonChair.jpg" alt="" /></a></p>
+                                                        <a href="product_detail.html" class="title">Carved Rosewood Chair</a><br/>
+                                                        <a href="products.html" class="category">Furniture</a>
+                                                        <p class="price">$850.00</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="item">
+                                            <ul class="thumbnails">
+                                                <li class="span3">
+                                                    <div class="product-box">
+                                                        <p><a href="product_detail.html"><img src="img/childrenClothing.jpg" alt="" /></a></p>
+                                                        <a href="product_detail.html" class="title">Kid's Green Costume</a><br/>
+                                                        <a href="products.html" class="category">Clothing</a>
+                                                        <p class="price">$20.00</p>
+                                                    </div>
+                                                </li>
+                                                <li class="span3">
+                                                    <div class="product-box">
+                                                        <p><a href="product_detail.html"><img src="img/dragonLamp.png" alt="" /></a></p>
+                                                        <a href="product_detail.html" class="title">Crystal Cross Lamp</a><br/>
+                                                        <a href="products.html" class="category">Furniture</a>
+                                                        <p class="price">$460.00</p>
+                                                    </div>
+                                                </li>
+                                                <li class="span3">
+                                                    <div class="product-box">
+                                                        <p><a href="product_detail.html"><img src="img/poster2.jpg" alt="" /></a></p>
+                                                        <a href="product_detail.html" class="title">Magic Dragon Poster</a><br/>
+                                                        <a href="products.html" class="category">Art</a>
+                                                        <p class="price">$15.00</p>
+                                                    </div>
+                                                </li>
+                                                <li class="span3">
+                                                    <div class="product-box">
+                                                        <p><a href="product_detail.html"><img src="img/menMask.jpg" alt="" /></a></p>
+                                                        <a href="product_detail.html" class="title">Purple Mask</a><br/>
+                                                        <a href="products.html" class="category">Clothing</a>
+                                                        <p class="price">$120.00</p>
+                                                    </div>
+                                                </li>																																	
+                                            </ul>
+                                        </div>
+                                    </div>							
+                                </div>
+                            </div>						
+                        </div>
+                        <br/>
+                        
+                        <div class="row">
+                        <div class="span12">
+                            <h4 class="title">
+                            <span class="pull-left"><span class="text"><span class="line">Latest <strong>Products</strong></span></span></span>
+                            <span class="pull-right">
+                                    <a class="left button" href="#myCarousel-2" data-slide="prev"></a><a class="right button" href="#myCarousel-2" data-slide="next"></a>
+                            </span>
+                            </h4>
+                                <div id="myCarousel-2" class="myCarousel carousel slide">
+                                    <div class="carousel-inner">
+                                        <div class="active item">
+                                            <ul class="thumbnails">												
+                                                <li class="span3">
+                                                    <div class="product-box">
+                                                        <span class="sale_tag"></span>
+                                                        <p><a href="product_detail.html"><img src="img/childrenClothing.jpg" alt="" /></a></p>
+                                                        <a href="product_detail.html" class="title">Kid's Green Costume</a><br/>
+                                                        <a href="products.html" class="category">Clothing</a>
+                                                        <p class="price">$20.00</p>
+                                                    </div>
+                                                </li>
+                                                <li class="span3">
+                                                    <div class="product-box">
+                                                        <p><a href="product_detail.html"><img src="img/menMask.jpg" alt="" /></a></p>
+                                                        <a href="product_detail.html" class="title">Purple Mask</a><br/>
+                                                        <a href="products.html" class="category">Clothing</a>
+                                                        <p class="price">$120.00</p>
+                                                    </div>
+                                                </li>
+                                                <li class="span3">
+                                                    <div class="product-box">
+                                                        <p><a href="product_detail.html"><img src="img/dragonPoster.jpg" alt="" /></a></p>
+                                                        <a href="product_detail.html" class="title">Chinese Style Poster</a><br/>
+                                                        <a href="products.html" class="category">Art</a>
+                                                        <p class="price">$15.00</p>
+                                                    </div>
+                                                </li>
+                                                <li class="span3">
+                                                    <div class="product-box">
+                                                        <p><a href="product_detail.html"><img src="img/dragonLamp.png" alt="" /></a></p>
+                                                        <a href="product_detail.html" class="title">Crystal Cross Lamp</a><br/>
+                                                        <a href="products.html" class="category">Furniture</a>
+                                                        <p class="price">$460.00</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="item">
+                                            <ul class="thumbnails">
+                                                <li class="span3">
+                                                        <div class="product-box">
+                                                                <p><a href="product_detail.html"><img src="img/dragonTable.jpg" alt="" /></a></p>
+                                                                <a href="product_detail.html" class="title">Dragon Marble Table</a><br/>
+                                                                <a href="products.html" class="category">Furniture</a>
+                                                                <p class="price">$999.99</p>
+                                                        </div>
+                                                </li>
+                                                <li class="span3">
+                                                        <div class="product-box">
+                                                                <p><a href="product_detail.html"><img src="img/menClothing.jpg" alt="" /></a></p>
+                                                                <a href="product_detail.html" class="title">Men's Dragon Warrior</a><br/>
+                                                                <a href="products.html" class="category">Clothing</a>
+                                                                <p class="price">$39.99</p>
+                                                        </div>
+                                                </li>
+                                                <li class="span3">
+                                                        <div class="product-box">
+                                                                <p><a href="product_detail.html"><img src="img/womenClothing2.jpg" alt="" /></a></p>
+                                                                <a href="product_detail.html" class="title">Women's Dragon Princess</a><br/>
+                                                                <a href="products.html" class="category">Clothing</a>
+                                                                <p class="price">$39.99</p>
+                                                        </div>
+                                                </li>
+                                                <li class="span3">
+                                                        <div class="product-box">
+                                                                <p><a href="product_detail.html"><img src="img/table2.jpg" alt="" /></a></p>
+                                                                <a href="product_detail.html" class="title">Grey Stone Table</a><br/>
+                                                                <a href="products.html" class="category">Furniture</a>
+                                                                <p class="price">$420.00</p>
+                                                        </div>
+                                                </li>																																	
+                                            </ul>
+                                        </div>
+                                    </div>							
+                                </div>
+                            </div>						
+                        </div>
+                        
+                        <div class="row feature_box">						
+                            <div class="span4">
+                                <div class="service">
+                                    <div class="responsive">	
+                                        <img src="img/feature_img_2.png" alt="" />
+                                        <h4>UNCOMPROMISED <strong>QUALITY</strong></h4><
+                                        <p>We are constantly updating our clothing, furniture and art by sourcing hot, trending and unique pieces from our loyal manufacturers. Design, durability and comfort are all key factors in building our collection.</p>									
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">	
+                                <div class="service">
+                                    <div class="customize">			
+                                        <img src="img/feature_img_1.png" alt="" />
+                                        <h4>FAST <strong>SHIPPING</strong></h4>
+                                        <p>Many of our competitors source from wholesalers, which often causes long delays when you order a product. Because we source directly from the manufacturer, we have our collections in stock and ready for immediate delivery.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="service">
+                                    <div class="support">	
+                                        <img src="img/feature_img_3.png" alt="" />
+                                        <h4>24/7 LIVE <strong>SUPPORT</strong></h4>
+                                        <p>We are proud to have a dedicated customer service team whose job is to deliver the very best support to you, our customer.</p>
+                                    </div>
+                                </div>
+                            </div>	
+                        </div>		
+                    </div>				
+                </div>
+            </section>
+            
+            <section class="our_client">
+                <h4 class="title"><span class="text">Manufactures</span></h4>
+                <div class="row">					
+                    <div class="span2">
+                        <a href="#"><img alt="" src="img/comp1.png"></a>
+                    </div>
+                    <div class="span2">
+                        <a href="#"><img alt="" src="img/comp3.jpg"></a>
+                    </div>
+                    <div class="span2">
+                        <a href="#"><img alt="" src="img/comp2.jpg"></a>
+                    </div>
+                    <div class="span2">
+                        <a href="#"><img alt="" src="img/comp4.jpg"></a>
+                    </div>
+                    <div class="span2">
+                        <a href="#"><img alt="" src="img/comp5.jpg"></a>
+                    </div>
+                    <div class="span2">
+                        <a href="#"><img alt="" src="img/comp6.png"></a>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="footer-bar">
+                <div class="row">
+                    <div class="span3">
+                        <h4>Navigation</h4>
+                        <ul class="nav">
+                            <li><a href="./UserHome.jsp">Homepage</a></li>  
+                            <li><a href="./contact.html">About Us</a></li>
+                            <li><a href="./contact.html">Contact Us</a></li>
+                            <li><a href="./UserCart.jsp">Your Cart</a></li>
+                            <li><a href="./register.html">Login</a></li>							
+                        </ul>					
+                    </div>
+                    <div class="span4">
+                            <h4>My Account</h4>
+                            <ul class="nav">
+                                <li><a href="./register.html">My Account</a></li>
+                                <li><a href="#">Order History</a></li>
+                                <li><a href="#">Wish List</a></li>
+                            </ul>
+                    </div>
+                    <div class="span5">
+                            <p class="logo"><img src="img/dragon1.png" class="site_logo" alt=""></p>
+                            <p>If you can't be a dragon, be yourself.</p>
+                            <br/>
+                    </div>					
+                </div>	
+            </section>
+                    
+            <section id="copyright">
+                    <span>Copyright 2013 bootstrappage template  All right reserved.</span>
+            </section>
+        </div>
+            <script src="js/common.js"></script>
+            <script src="js/jquery.flexslider-min.js"></script>
+            <script type="text/javascript">
+                    $(function() {
+                            $(document).ready(function() {
+                                    $('.flexslider').flexslider({
+                                            animation: "fade",
+                                            slideshowSpeed: 4000,
+                                            animationSpeed: 600,
+                                            controlNav: false,
+                                            directionNav: true,
+                                            controlsContainer: ".flex-container" // the container that holds the flexslider
+                                    });
+                            });
+                    });
+            </script>
+    </body>
+</html>
